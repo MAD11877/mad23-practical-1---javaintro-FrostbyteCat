@@ -82,15 +82,12 @@ public class Question5
         highest_count = temp_count;
         mode = true;
       }
-      //To account for scenarios where there is no mode or no unique mode
-      else if(temp_count == highest_count){
-        mode = false;
-      }
     }
 
     if(mode == true){
       System.out.printf("The mode calculated from the integers of the inputs is %d and it has a frequency of %d.", highest_frequency_int, highest_count);
     }
+    //To account for scenarios where there is no mode or no unique mode
     else if(mode == false){
       System.out.print("There is no unique mode based on the integers from the inputs.");
     }
