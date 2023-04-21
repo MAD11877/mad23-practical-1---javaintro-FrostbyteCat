@@ -9,8 +9,40 @@ public class Question2
      * 
      * Hint: in.nextDouble() to read double
      */
-     
-    Scanner in = new Scanner(System.in);
-    double height = in.nextDouble();
+    double height;
+    double weight;
+    Scanner scanner = new Scanner(System.in);
+
+    while (true){
+      System.out.print("Enter height in metres (m): ");
+
+      if (scanner.hasNextDouble()){
+        height = scanner.nextDouble();
+      }
+      else{
+        System.out.println("Invalid input. Please enter a number.");
+        scanner.next();
+        continue;
+      }
+      break;
+    }
+
+    while(true){
+      System.out.print("Enter weight in kilograms (kg): ");
+      
+      if (scanner.hasNextDouble()){
+        weight = scanner.nextDouble();
+      }
+      else{
+        System.out.println("Invalid input. Please enter a number.");
+        scanner.next();
+        continue;
+      }
+      break;
+    }
+
+    scanner.close();
+    double bmi = weight/(height*height);
+    System.out.printf("Your BMI is %.2f", bmi);
   }
 }
